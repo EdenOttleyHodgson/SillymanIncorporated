@@ -5,7 +5,10 @@
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Area2D" parent="." instance=ExtResource("1_qvsqt")]
+[node name="track" parent="." instance=ExtResource("1_qvsqt")]
 
-[node name="Area2D2" parent="." instance=ExtResource("2_hijkr")]
+[node name="note" parent="." instance=ExtResource("2_hijkr")]
 position = Vector2(742, 418)
+
+[node name="Area2D" parent="." instance=ExtResource("2_hijkr")]
+position = Vector2(816, 418)
