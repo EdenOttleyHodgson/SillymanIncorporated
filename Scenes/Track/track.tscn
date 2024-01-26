@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://sovo3ubye6pe"]
+
+[ext_resource type="Texture2D" uid="uid://cm8c6881t5rdp" path="res://trackbackground.png" id="1_4ha03"]
+[ext_resource type="Script" path="res://track.gd" id="1_nbc1a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_br8gx"]
+radius = 35.609
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_nbc1a")
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(354, 420)
+shape = SubResource("CircleShape2D_br8gx")
+
+[node name="track" type="Sprite2D" parent="."]
+position = Vector2(525, 420)
+scale = Vector2(1.80812, 1.61167)
+texture = ExtResource("1_4ha03")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
