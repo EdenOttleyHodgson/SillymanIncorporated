@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ceklhr8j3g1ti"]
 
-[ext_resource type="Script" path="res://note.gd" id="1_7l3c6"]
-[ext_resource type="Texture2D" uid="uid://7tgah562qars" path="res://kisspng-geometry-dash-escape-the-core-robtop-games-magnet-5ab6312e7983c7.0729642015218895824977.png" id="1_p2hgm"]
+[ext_resource type="Script" path="res://Scenes/Track/note.gd" id="1_7l3c6"]
+[ext_resource type="Texture2D" uid="uid://cqqrfovqmdn2v" path="res://Assets/art/Tracks/HappyGuy.png" id="1_p2hgm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5tk1d"]
 radius = 144.562
