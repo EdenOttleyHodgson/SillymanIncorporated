@@ -8,9 +8,22 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("hit_note1"):
+		print("fire in the hole")
 		if len(notesInside) > 0:
+			var distance = notesInside[0].position.x-position.x
+			print(distance)
+			#Define distance ranges for points
+			if distance > -25 && distance < 25:
+				print("perfect")
+			elif distance > -50 && distance < 50:
+				print("okay")
+			else:
+				print("bad")
+			
+			# Pop note from list and delete it
 			notesInside.pop_front().free()
-	
+			
+			
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

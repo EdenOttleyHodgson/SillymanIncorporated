@@ -6,6 +6,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="track" parent="." instance=ExtResource("1_qvsqt")]
+position = Vector2(446, 422)
 
 [node name="note" parent="." instance=ExtResource("2_hijkr")]
 position = Vector2(742, 418)
