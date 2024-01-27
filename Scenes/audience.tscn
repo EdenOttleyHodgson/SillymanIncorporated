@@ -202,7 +202,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"display",
-"speed": 20.0
+"speed": 24.0
 }]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]

@@ -1,6 +1,6 @@
 extends Area2D
 signal hit(score: int)
-
+signal miss
 @export var note_scene : PackedScene
 
 var example_dict = {}
@@ -28,9 +28,6 @@ func _on_track_1_hit(score):
 func _on_track_2_hit(score):
 	emit_signal("hit", score)
 
-
-
-
-
 func _on_killbox_area_entered(area):
 	area.free()
+	miss.emit()
