@@ -27,11 +27,11 @@ func _on_area_exited(area):
 func handle_note():
 	if len(notesInside) > 0:
 		var currentNote = notesInside[0]
-		var distance = currentNote.position.x-position.x
+		var distance = currentNote.global_position.x-global_position.x
 		var totalDistance = hitWidth + (currentNote.get_node("CollisionShape2D").shape.radius)/2
 		# Define distance ranges for points
 		# TODO maybe change range based on speed? - probably convert to time using t=d/s
-		var perfect = totalDistance/5
+		var perfect = totalDistance/10
 		var okay = totalDistance/3
 		if distance > -(perfect) && distance < (perfect): # These numbers will need tweaking
 			print("perfect")

@@ -1,24 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2wkd2uqo8n3m"]
+[gd_scene load_steps=6 format=3 uid="uid://b2wkd2uqo8n3m"]
 
-[ext_resource type="PackedScene" uid="uid://sovo3ubye6pe" path="res://Scenes/Track/track.tscn" id="1_4fmr8"]
 [ext_resource type="Script" path="res://Scenes/Track/track_man.gd" id="1_gkfjv"]
-[ext_resource type="PackedScene" uid="uid://ceklhr8j3g1ti" path="res://Scenes/Track/note.tscn" id="3_w4yqb"]
+[ext_resource type="PackedScene" uid="uid://sovo3ubye6pe" path="res://Scenes/Track/track.tscn" id="4_61tki"]
 [ext_resource type="Texture2D" uid="uid://beulklqa3nvrn" path="res://Assets/art/Tracks/bigtoptrack.png" id="4_ieomc"]
+[ext_resource type="PackedScene" uid="uid://cq3aaj2xskxdu" path="res://Scenes/Track/NoteSpawner.tscn" id="4_ws00g"]
+[ext_resource type="PackedScene" uid="uid://dythh0br4ybmp" path="res://Scenes/killbox.tscn" id="5_e2a3a"]
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_gkfjv")
-
-[node name="track1" parent="." instance=ExtResource("1_4fmr8")]
-position = Vector2(-315, -60)
-
-[node name="track2" parent="." instance=ExtResource("1_4fmr8")]
-position = Vector2(-315, 57)
-
-[node name="Area2D" parent="." instance=ExtResource("3_w4yqb")]
-position = Vector2(270, -60)
-
-[node name="Area2D2" parent="." instance=ExtResource("3_w4yqb")]
-position = Vector2(270, 60)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visibility_layer = 4
@@ -27,5 +16,18 @@ position = Vector2(0.358353, 0.12516)
 scale = Vector2(0.145968, 0.145968)
 texture = ExtResource("4_ieomc")
 
+[node name="track1" parent="." instance=ExtResource("4_61tki")]
+position = Vector2(-315, -58)
+
+[node name="track2" parent="." instance=ExtResource("4_61tki")]
+position = Vector2(-315, 58)
+
+[node name="NoteSpawner" parent="." instance=ExtResource("4_ws00g")]
+position = Vector2(289, -60)
+
+[node name="killbox" parent="." instance=ExtResource("5_e2a3a")]
+position = Vector2(-373, -5)
+
 [connection signal="hit" from="track1" to="." method="_on_track_1_hit"]
 [connection signal="hit" from="track2" to="." method="_on_track_2_hit"]
+[connection signal="area_entered" from="killbox" to="." method="_on_killbox_area_entered"]

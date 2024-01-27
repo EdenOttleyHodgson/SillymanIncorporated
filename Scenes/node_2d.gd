@@ -14,8 +14,6 @@ func _process(delta):
 	if health > 0:
 		health -= .5
 		$health.size.x = (health/100)*healthBarSize
-	else:
-		print("diededed")
 
 func _on_tracks_hit(score):
 	totalScore += score
