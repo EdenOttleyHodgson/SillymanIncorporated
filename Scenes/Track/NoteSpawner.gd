@@ -7,17 +7,16 @@ var count = 0
 
 func	 _ready():
 	import_resources_data()
-	$NoteTimer.start(float((example_dict[count])[0]))
-	count += 1
+	$NoteTimer.start(0.1)
 
 func _on_note_timer_timeout():
-	if count < len(example_dict):
+	if count < len(example_dict[3]):
 		var note = note_scene.instantiate()
-		var note_time = float((example_dict[count])[0])
+		var note_time = example_dict[3]
 		print(note_time)
 		count += 1
 		add_child(note)
-		$NoteTimer.set_wait_time(note_time)
+		$NoteTimer.set_wait_time(float(note_time[count]))
 	else:
 		$NoteTimer.stop()
 
