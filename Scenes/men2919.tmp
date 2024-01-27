@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://cya77rhouqu0q"]
+
+[ext_resource type="Script" path="res://Scenes/menu.gd" id="1_b07rx"]
+[ext_resource type="PackedScene" uid="uid://b674no1mgkin6" path="res://Scenes/settings.tscn" id="2_b1x51"]
+[ext_resource type="PackedScene" uid="uid://5gp3pvfg4qe5" path="res://Scenes/newgame.tscn" id="3_g5c0u"]
+[ext_resource type="PackedScene" uid="uid://xmj8a7rc5eh2" path="res://Scenes/continue.tscn" id="4_7nhyu"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_b07rx")
+settings_scene = ExtResource("2_b1x51")
+new_game_scene = ExtResource("3_g5c0u")
+continue_scene = ExtResource("4_7nhyu")
+
+[node name="Continue" type="Button" parent="."]
+offset_left = 1096.0
+offset_top = 299.0
+offset_right = 1760.0
+offset_bottom = 449.0
+theme_override_font_sizes/font_size = 58
+text = "Continue
+"
+
+[node name="New game" type="Button" parent="."]
+offset_left = 1096.0
+offset_top = 566.0
+offset_right = 1760.0
+offset_bottom = 716.0
+theme_override_font_sizes/font_size = 58
+text = "New Game"
+
+[node name="Settings" type="Button" parent="."]
+offset_left = 1101.0
+offset_top = 825.0
+offset_right = 1765.0
+offset_bottom = 975.0
+theme_override_font_sizes/font_size = 58
+text = "Settings
+"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1120.0
+offset_top = 56.0
+offset_right = 1816.0
+offset_bottom = 149.0
+theme_override_font_sizes/font_size = 58
+text = "Sillyman Incorporated"
+
+[connection signal="pressed" from="Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="New game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://xmj8a7rc5eh2"]
+
+[ext_resource type="PackedScene" uid="uid://cya77rhouqu0q" path="res://Scenes/menu.tscn" id="1_5jx2m"]
+
+[node name="Node2D" instance=ExtResource("1_5jx2m")]
+
+[node name="Label" parent="." index="3"]
+text = "Sillyman Continued"
