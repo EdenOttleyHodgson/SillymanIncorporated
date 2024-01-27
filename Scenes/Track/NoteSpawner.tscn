@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq3aaj2xskxdu"]
+
+[ext_resource type="Script" path="res://Scenes/Track/NoteSpawner.gd" id="1_dmvyv"]
+[ext_resource type="PackedScene" uid="uid://ceklhr8j3g1ti" path="res://Scenes/Track/note.tscn" id="2_m7mlb"]
+
+[node name="NoteSpawner" type="Node"]
+script = ExtResource("1_dmvyv")
+note_scene = ExtResource("2_m7mlb")
+
+[node name="StartTimer" type="Timer" parent="."]
+
+[node name="NoteTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="timeout" from="NoteTimer" to="." method="_on_note_timer_timeout"]

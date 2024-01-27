@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ceklhr8j3g1ti"]
 
 [ext_resource type="Script" path="res://Scenes/Track/note.gd" id="1_7l3c6"]
-[ext_resource type="Texture2D" uid="uid://cqqrfovqmdn2v" path="res://Assets/art/Tracks/HappyGuy.png" id="1_p2hgm"]
+[ext_resource type="Texture2D" uid="uid://cqqrfovqmdn2v" path="res://Assets/art/HappyGuy.png" id="2_so6xx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5tk1d"]
 radius = 144.562
@@ -13,7 +13,7 @@ script = ExtResource("1_7l3c6")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.250916, 5.51498)
 scale = Vector2(0.0870849, 0.0858583)
-texture = ExtResource("1_p2hgm")
+texture = ExtResource("2_so6xx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1

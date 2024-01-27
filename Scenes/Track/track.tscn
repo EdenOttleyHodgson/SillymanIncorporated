@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://sovo3ubye6pe"]
 
-[ext_resource type="Texture2D" uid="uid://dsf12nh3lk81o" path="res://Assets/art/Tracks/trackbackground.png" id="1_4ha03"]
+[ext_resource type="Texture2D" uid="uid://dsf12nh3lk81o" path="res://Assets/art/trackbackground.png" id="1_4ha03"]
 [ext_resource type="Script" path="res://Scenes/Track/track.gd" id="1_nbc1a"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_br8gx"]

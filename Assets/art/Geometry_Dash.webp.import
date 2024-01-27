@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlevgqosweu2n"
-path="res://.godot/imported/Geometry_Dash.webp-57fc8a63b1eebb68efa55c525192d7e6.ctex"
+path="res://.godot/imported/Geometry_Dash.webp-51063c2f7a53b5f6c19d0876d550d756.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/art/Tracks/Geometry_Dash.webp"
-dest_files=["res://.godot/imported/Geometry_Dash.webp-57fc8a63b1eebb68efa55c525192d7e6.ctex"]
+source_file="res://Assets/art/Geometry_Dash.webp"
+dest_files=["res://.godot/imported/Geometry_Dash.webp-51063c2f7a53b5f6c19d0876d550d756.ctex"]
 
 [params]
 

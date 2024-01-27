@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cqqrfovqmdn2v"
-path="res://.godot/imported/HappyGuy.png-d58681f2633b270c0c1c8e543c9fc24d.ctex"
+path="res://.godot/imported/HappyGuy.png-d41edb94af535fe617c6b416c17e00f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/art/Tracks/HappyGuy.png"
-dest_files=["res://.godot/imported/HappyGuy.png-d58681f2633b270c0c1c8e543c9fc24d.ctex"]
+source_file="res://Assets/art/HappyGuy.png"
+dest_files=["res://.godot/imported/HappyGuy.png-d41edb94af535fe617c6b416c17e00f9.ctex"]
 
 [params]
 

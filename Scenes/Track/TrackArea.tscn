@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://df103ngytc3pv"]
 
-[ext_resource type="Texture2D" uid="uid://dlevgqosweu2n" path="res://Assets/art/Tracks/Geometry_Dash.webp" id="1_wxf6o"]
+[ext_resource type="Texture2D" uid="uid://dlevgqosweu2n" path="res://Assets/art/Geometry_Dash.webp" id="1_wxf6o"]
 
 [node name="Area2D" type="Area2D"]
 position = Vector2(512, 313)

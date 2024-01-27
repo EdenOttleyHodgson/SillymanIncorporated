@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg0g0wui26y2r"]
+
+[ext_resource type="Script" path="res://Scenes/Track/FileReader.gd" id="1_tee2x"]
+
+[node name="FileReader" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_tee2x")

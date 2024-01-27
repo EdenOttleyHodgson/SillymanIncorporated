@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsf12nh3lk81o"
-path="res://.godot/imported/trackbackground.png-b4a2f171701f3e2cc8aae44ffdeda301.ctex"
+path="res://.godot/imported/trackbackground.png-ec35f4021ce81070fa00936ae170ff2f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/art/Tracks/trackbackground.png"
-dest_files=["res://.godot/imported/trackbackground.png-b4a2f171701f3e2cc8aae44ffdeda301.ctex"]
+source_file="res://Assets/art/trackbackground.png"
+dest_files=["res://.godot/imported/trackbackground.png-ec35f4021ce81070fa00936ae170ff2f.ctex"]
 
 [params]
 
