@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://sovo3ubye6pe"]
+[gd_scene load_steps=3 format=3 uid="uid://sovo3ubye6pe"]
 
-[ext_resource type="Texture2D" uid="uid://dsf12nh3lk81o" path="res://Assets/art/Tracks/trackbackground.png" id="1_4ha03"]
 [ext_resource type="Script" path="res://Scenes/Track/track.gd" id="1_nbc1a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1vgu"]
@@ -14,11 +13,6 @@ script = ExtResource("1_nbc1a")
 z_index = 1
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_j1vgu")
-
-[node name="track" type="Sprite2D" parent="."]
-position = Vector2(170, -3)
-scale = Vector2(1.80812, 1.61167)
-texture = ExtResource("1_4ha03")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

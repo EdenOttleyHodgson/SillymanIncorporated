@@ -17,10 +17,9 @@ func _process(delta):
 	else:
 		print("diededed")
 
-func _on_track_hit(score):
+func _on_tracks_hit(score):
 	totalScore += score
 	combo += 1
-	
 	if score == 300:
 		health += 40
 	elif  score == 100:
@@ -33,3 +32,6 @@ func _on_track_hit(score):
 	
 	$score.text = "Score: " + str(totalScore)
 	$combo.text = str(combo) + "x"
+
+
+
