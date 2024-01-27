@@ -7,6 +7,7 @@
 radius = 144.562
 
 [node name="Area2D" type="Area2D"]
+position = Vector2(688, 292)
 script = ExtResource("1_7l3c6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

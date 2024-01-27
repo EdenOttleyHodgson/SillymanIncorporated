@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_br8gx"]
 radius = 35.609
 
-[node name="Area2D" type="Area2D"]
+[node name="Area2D2" type="Area2D"]
 script = ExtResource("1_nbc1a")
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
