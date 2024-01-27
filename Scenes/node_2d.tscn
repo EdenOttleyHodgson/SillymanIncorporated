@@ -27,15 +27,15 @@ offset_right = 156.0
 offset_bottom = 592.0
 
 [node name="score" parent="." instance=ExtResource("3_8v0je")]
-offset_left = 245.0
-offset_top = 18.0
-offset_right = 386.0
-offset_bottom = 58.0
+offset_left = 3.0
+offset_top = 20.0
+offset_right = 144.0
+offset_bottom = 60.0
 
 [node name="health" parent="." instance=ExtResource("6_1l4re")]
-offset_left = 72.0
-offset_top = 12.0
-offset_right = 172.0
-offset_bottom = 27.0
+offset_left = 10.0
+offset_top = 0.0
+offset_right = 510.0
+offset_bottom = 15.0
 
 [connection signal="hit" from="track" to="." method="_on_track_hit"]

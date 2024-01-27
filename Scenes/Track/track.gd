@@ -1,9 +1,7 @@
 extends Area2D
-signal hit
+signal hit(score: int)
 var notesInside
 var hitWidth
-var score = 0
-var combo = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,17 +21,16 @@ func _input(event):
 			
 			if distance > -(perfect) && distance < (perfect): # These numbers will need tweaking
 				print("perfect")
-				score += 300
+				emit_signal("hit", 300)
 			elif distance > -(okay) && distance < okay:
 				print("okay")
-				score += 100
+				emit_signal("hit", 100)
 			else:
 				print("bad")
-				score += 50
-			combo += 1
+				emit_signal("hit", 50)
 			# Pop note from list and delete it
 			notesInside.pop_front().free()
-			hit.emit()
+			
 			
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -44,9 +41,3 @@ func _on_area_entered(area):
 
 func _on_area_exited(area):
 	notesInside.erase(area)
-
-func get_score():
-	return score
-
-func get_combo():
-	return combo
