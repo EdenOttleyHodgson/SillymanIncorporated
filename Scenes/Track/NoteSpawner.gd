@@ -3,18 +3,23 @@ extends Node
 @export var note_scene : PackedScene
 
 var example_dict = {}
+var count = 0
 
 func	 _ready():
 	import_resources_data()
-	$StartTimer.start()
-	
-
-func _on_start_timer_timeout():
-	$NoteTimer.start(5.0)
+	$NoteTimer.start(float((example_dict[count])[0]))
+	count += 1
 
 func _on_note_timer_timeout():
-	var note = note_scene.instantiate()
-	add_child(note)
+	if count < len(example_dict):
+		var note = note_scene.instantiate()
+		var note_time = float((example_dict[count])[0])
+		print(note_time)
+		count += 1
+		add_child(note)
+		$NoteTimer.set_wait_time(note_time)
+	else:
+		$NoteTimer.stop()
 
 func import_resources_data():
 	var file = FileAccess.open("res://Assets/Tracks/example.txt", FileAccess.READ)
