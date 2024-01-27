@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Master Slider.gd" id="4_uyue3"]
 [ext_resource type="AudioStream" uid="uid://cahms6v7jrirf" path="res://Assets/sound/you-will-know-our-names-but-with-a-kazoo-made-with-Voicemod-technology.mp3" id="5_x8ruf"]
 
-[node name="Settings Menu" type="Node2D"]
+[node name="Continue Menu" type="Node2D"]
 script = ExtResource("1_5gugv")
 
 [node name="Settings Title" type="Label" parent="."]
@@ -80,33 +80,17 @@ alignment = 1
 
 [node name="Master Slider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-max_value = 1.0
-step = 0.001
-value = 0.5
 script = ExtResource("4_uyue3")
-bus_name = "Master"
 
 [node name="Music Slider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-max_value = 1.0
-step = 0.001
-value = 0.5
-script = ExtResource("4_uyue3")
-bus_name = "music"
 
 [node name="SFX Slider" type="HSlider" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-max_value = 1.0
-step = 0.001
-value = 1.0
-script = ExtResource("4_uyue3")
-bus_name = "sfx"
 
 [node name="Test" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_x8ruf")
-volume_db = 10.0
+volume_db = 10.758
 
 [connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
 [connection signal="drag_ended" from="VBoxContainer/HBoxContainer/VBoxContainer2/Master Slider" to="." method="_on_master_slider_drag_ended"]
-[connection signal="drag_ended" from="VBoxContainer/HBoxContainer/VBoxContainer2/Music Slider" to="." method="_on_master_slider_drag_ended"]
-[connection signal="drag_ended" from="VBoxContainer/HBoxContainer/VBoxContainer2/SFX Slider" to="." method="_on_master_slider_drag_ended"]

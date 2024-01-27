@@ -13,9 +13,9 @@ script = ExtResource("1_b07rx")
 
 [node name="Continue" type="Button" parent="."]
 offset_left = 1208.0
-offset_top = 300.0
+offset_top = 299.0
 offset_right = 1618.0
-offset_bottom = 450.0
+offset_bottom = 449.0
 theme_override_font_sizes/font_size = 58
 theme_override_styles/normal = SubResource("StyleBoxEmpty_clceu")
 text = "Continue
@@ -24,9 +24,9 @@ flat = true
 
 [node name="New game" type="Button" parent="."]
 offset_left = 1208.0
-offset_top = 500.0
+offset_top = 516.0
 offset_right = 1618.0
-offset_bottom = 650.0
+offset_bottom = 666.0
 theme = SubResource("Theme_dsyo0")
 theme_override_font_sizes/font_size = 58
 toggle_mode = true
@@ -36,9 +36,9 @@ flat = true
 
 [node name="Settings" type="Button" parent="."]
 offset_left = 1208.0
-offset_top = 700.0
+offset_top = 721.0
 offset_right = 1618.0
-offset_bottom = 850.0
+offset_bottom = 871.0
 theme_override_font_sizes/font_size = 58
 text = "Settings
 "
