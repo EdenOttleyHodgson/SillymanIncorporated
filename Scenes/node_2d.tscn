@@ -10,10 +10,10 @@
 script = ExtResource("1_ehni3")
 
 [node name="combo" parent="." instance=ExtResource("4_oc2mx")]
-offset_left = 158.0
-offset_top = 635.0
-offset_right = 243.0
-offset_bottom = 699.0
+offset_left = 29.0
+offset_top = 994.0
+offset_right = 114.0
+offset_bottom = 1058.0
 theme_override_font_sizes/normal_font_size = 33
 
 [node name="score" parent="." instance=ExtResource("3_8v0je")]
@@ -30,6 +30,7 @@ offset_bottom = 31.0
 
 [node name="tracks" parent="." instance=ExtResource("6_sdhkj")]
 z_index = -1
-position = Vector2(889, 518)
+position = Vector2(1138, 792)
+scale = Vector2(1.6, 1.6)
 
 [connection signal="hit" from="tracks" to="." method="_on_tracks_hit"]
