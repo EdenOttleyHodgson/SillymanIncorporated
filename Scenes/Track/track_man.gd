@@ -1,10 +1,22 @@
 extends Area2D
 signal hit(score: int)
 
+@export var note_scene : PackedScene
+
+var example_dict = {}
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	import_resources_data("res://Assets/levels/example.txt")
+	$NoteSpawner.start(example_dict[0])
+	$NoteSpawner2.start(example_dict[1])
 
+func import_resources_data(fileName):
+	var file = FileAccess.open(fileName, FileAccess.READ)
+ 
+	while !file.eof_reached():
+		var data_set = Array(file.get_csv_line())
+		example_dict[example_dict.size()] = data_set
+	file.close()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

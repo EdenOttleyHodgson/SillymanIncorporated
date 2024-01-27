@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://b2wkd2uqo8n3m"]
 
 [ext_resource type="Script" path="res://Scenes/Track/track_man.gd" id="1_gkfjv"]
+[ext_resource type="Texture2D" uid="uid://b5rdbjeicggja" path="res://Assets/art/Tracks/bg.png" id="2_r47yu"]
 [ext_resource type="PackedScene" uid="uid://sovo3ubye6pe" path="res://Scenes/Track/track.tscn" id="4_61tki"]
-[ext_resource type="Texture2D" uid="uid://beulklqa3nvrn" path="res://Assets/art/Tracks/bigtoptrack.png" id="4_ieomc"]
 [ext_resource type="PackedScene" uid="uid://cq3aaj2xskxdu" path="res://Scenes/Track/NoteSpawner.tscn" id="4_ws00g"]
 [ext_resource type="PackedScene" uid="uid://dythh0br4ybmp" path="res://Scenes/killbox.tscn" id="5_e2a3a"]
 
@@ -12,9 +12,9 @@ script = ExtResource("1_gkfjv")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visibility_layer = 4
 z_index = -2
-position = Vector2(0.358353, 0.12516)
-scale = Vector2(0.145968, 0.145968)
-texture = ExtResource("4_ieomc")
+position = Vector2(-187, -76)
+scale = Vector2(0.14891, 0.14891)
+texture = ExtResource("2_r47yu")
 
 [node name="track1" parent="." instance=ExtResource("4_61tki")]
 position = Vector2(-315, -58)
@@ -23,10 +23,13 @@ position = Vector2(-315, -58)
 position = Vector2(-315, 58)
 
 [node name="NoteSpawner" parent="." instance=ExtResource("4_ws00g")]
-position = Vector2(289, -60)
+position = Vector2(355, -58)
 
 [node name="killbox" parent="." instance=ExtResource("5_e2a3a")]
 position = Vector2(-373, -5)
+
+[node name="NoteSpawner2" parent="." instance=ExtResource("4_ws00g")]
+position = Vector2(359, 62)
 
 [connection signal="hit" from="track1" to="." method="_on_track_1_hit"]
 [connection signal="hit" from="track2" to="." method="_on_track_2_hit"]

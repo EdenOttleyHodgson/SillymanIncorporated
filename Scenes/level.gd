@@ -3,8 +3,10 @@ var health = 100
 var totalScore = 0
 var combo = 0
 var healthBarSize
+var hpDrain = 0.25
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$audience.play()
 	healthBarSize = $health.size.x
 	pass # Replace with function body.
 
@@ -12,7 +14,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if health > 0:
-		health -= .5
+		health -= hpDrain
 		$health.size.x = (health/100)*healthBarSize
 
 func _on_tracks_hit(score):

@@ -31,7 +31,7 @@ func handle_note():
 		var totalDistance = hitWidth + (currentNote.get_node("CollisionShape2D").shape.radius)/2
 		# Define distance ranges for points
 		# TODO maybe change range based on speed? - probably convert to time using t=d/s
-		var perfect = totalDistance/10
+		var perfect = totalDistance/6
 		var okay = totalDistance/3
 		if distance > -(perfect) && distance < (perfect): # These numbers will need tweaking
 			print("perfect")
