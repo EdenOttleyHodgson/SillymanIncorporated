@@ -21,8 +21,10 @@ position = Vector2(270, -60)
 position = Vector2(270, 60)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visibility_layer = 4
 z_index = -2
-scale = Vector2(0.145833, 0.145833)
+position = Vector2(0.358353, 0.12516)
+scale = Vector2(0.145968, 0.145968)
 texture = ExtResource("4_ieomc")
 
 [connection signal="hit" from="track1" to="." method="_on_track_1_hit"]
