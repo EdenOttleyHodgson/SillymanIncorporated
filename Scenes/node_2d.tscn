@@ -1,9 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://do0rjr1s8w5gc"]
+[gd_scene load_steps=7 format=3 uid="uid://do0rjr1s8w5gc"]
 
+[ext_resource type="Script" path="res://Scenes/node_2d.gd" id="1_ehni3"]
 [ext_resource type="PackedScene" uid="uid://sovo3ubye6pe" path="res://Scenes/Track/track.tscn" id="1_qvsqt"]
 [ext_resource type="PackedScene" uid="uid://ceklhr8j3g1ti" path="res://Scenes/Track/note.tscn" id="2_hijkr"]
+[ext_resource type="PackedScene" uid="uid://1g4nr8ehini0" path="res://Scenes/score.tscn" id="3_8v0je"]
+[ext_resource type="PackedScene" uid="uid://ctbvqdci6k2p" path="res://Scenes/combo.tscn" id="4_oc2mx"]
+[ext_resource type="PackedScene" uid="uid://c223jkb53jiij" path="res://Scenes/health.tscn" id="6_1l4re"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_ehni3")
 
 [node name="track" parent="." instance=ExtResource("1_qvsqt")]
 position = Vector2(446, 422)
@@ -13,3 +18,24 @@ position = Vector2(742, 418)
 
 [node name="Area2D" parent="." instance=ExtResource("2_hijkr")]
 position = Vector2(816, 418)
+scale = Vector2(0.987592, 0.927418)
+
+[node name="combo" parent="." instance=ExtResource("4_oc2mx")]
+offset_left = 116.0
+offset_top = 552.0
+offset_right = 156.0
+offset_bottom = 592.0
+
+[node name="score" parent="." instance=ExtResource("3_8v0je")]
+offset_left = 245.0
+offset_top = 18.0
+offset_right = 386.0
+offset_bottom = 58.0
+
+[node name="health" parent="." instance=ExtResource("6_1l4re")]
+offset_left = 72.0
+offset_top = 12.0
+offset_right = 172.0
+offset_bottom = 27.0
+
+[connection signal="hit" from="track" to="." method="_on_track_hit"]

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ctbvqdci6k2p"]
+
+[node name="RichTextLabel" type="RichTextLabel"]
+offset_right = 53.0
+offset_bottom = 24.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "0x"
