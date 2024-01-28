@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7172oltm4rd5"]
+[gd_scene load_steps=3 format=3 uid="uid://bjcitkuk6uap0"]
 
 [ext_resource type="Script" path="res://Scenes/hit_effect.gd" id="1_3cfdj"]
 [ext_resource type="Texture2D" uid="uid://dsykcved4pk5u" path="res://Assets/art/Funny.png" id="1_o06vw"]

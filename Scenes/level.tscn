@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://1g4nr8ehini0" path="res://Scenes/score.tscn" id="3_5w4eb"]
 [ext_resource type="PackedScene" uid="uid://c223jkb53jiij" path="res://Scenes/health.tscn" id="4_ixtee"]
 [ext_resource type="PackedScene" uid="uid://b2wkd2uqo8n3m" path="res://Scenes/Track/track_man.tscn" id="5_kfsiq"]
-[ext_resource type="PackedScene" uid="uid://c0jgidvs6soob" path="res://Scenes/audience.tscn" id="6_d28aj"]
-[ext_resource type="PackedScene" uid="uid://cniky8lnn5i4i" path="res://Scenes/king.tscn" id="7_nn76q"]
-[ext_resource type="PackedScene" uid="uid://c7172oltm4rd5" path="res://Scenes/hit_effect.tscn" id="8_rqpus"]
+[ext_resource type="PackedScene" path="res://Scenes/audience.tscn" id="6_d28aj"]
+[ext_resource type="PackedScene" path="res://Scenes/king.tscn" id="7_nn76q"]
+[ext_resource type="PackedScene" uid="uid://bjcitkuk6uap0" path="res://Scenes/hit_effect.tscn" id="8_rqpus"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1xfwg")
@@ -53,3 +53,4 @@ rotation = -0.523599
 
 [connection signal="hit" from="tracks" to="." method="_on_tracks_hit"]
 [connection signal="miss" from="tracks" to="." method="_on_tracks_miss"]
+[connection signal="tracks_finished" from="tracks" to="." method="_on_tracks_tracks_finished"]

@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scenes/Track/track_man.gd" id="1_gkfjv"]
 [ext_resource type="Texture2D" uid="uid://b5rdbjeicggja" path="res://Assets/art/Tracks/bg.png" id="2_r47yu"]
 [ext_resource type="PackedScene" uid="uid://sovo3ubye6pe" path="res://Scenes/Track/track.tscn" id="4_61tki"]
-[ext_resource type="PackedScene" uid="uid://cq3aaj2xskxdu" path="res://Scenes/Track/NoteSpawner.tscn" id="4_ws00g"]
-[ext_resource type="PackedScene" uid="uid://dythh0br4ybmp" path="res://Scenes/killbox.tscn" id="5_e2a3a"]
+[ext_resource type="PackedScene" uid="uid://0514dqe0gfj6" path="res://Scenes/Track/NoteSpawner.tscn" id="4_ws00g"]
+[ext_resource type="PackedScene" path="res://Scenes/killbox.tscn" id="5_e2a3a"]
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_gkfjv")
@@ -33,4 +33,6 @@ position = Vector2(359, 62)
 
 [connection signal="hit" from="track1" to="." method="_on_track_1_hit"]
 [connection signal="hit" from="track2" to="." method="_on_track_2_hit"]
+[connection signal="finished" from="NoteSpawner" to="." method="_on_note_spawner1_finished"]
 [connection signal="area_entered" from="killbox" to="." method="_on_killbox_area_entered"]
+[connection signal="finished" from="NoteSpawner2" to="." method="_on_note_spawner2_finished"]

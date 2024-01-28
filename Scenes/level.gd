@@ -7,6 +7,8 @@ var healthBarSize
 var hpDrain = 0.1
 var mood # 1 = sad, 2= normal, 3 = happy
 
+signal finished(score: int, died: bool)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$audience.play()
@@ -23,6 +25,7 @@ func _process(delta):
 		$health.size.x = (health/100)*healthBarSize
 	elif health <= 0:
 		health = 0
+		emit_signal("finished", totalScore, true)
 	if health >= 66 && mood != 3:
 		$king.play("happy")
 		mood = 3
@@ -58,3 +61,7 @@ func _on_tracks_miss():
 	combo = 0
 	health -= 10
 	$combo.text = str(combo) + "x"
+
+
+func _on_tracks_tracks_finished():
+	emit_signal("finished", totalScore, false)

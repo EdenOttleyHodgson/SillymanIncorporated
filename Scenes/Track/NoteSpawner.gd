@@ -5,7 +5,7 @@ extends Node
 var count = 0
 var spawnType
 var track
-
+signal finished
 func start(notes):
 	track = notes
 	$NoteTimer.start(float(0))
@@ -27,4 +27,6 @@ func _on_note_timer_timeout():
 			$NoteTimer.set_wait_time(note_time)
 	else:
 		$NoteTimer.stop()
+		emit_signal("finished")
+		
 

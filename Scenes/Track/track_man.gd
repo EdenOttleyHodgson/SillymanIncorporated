@@ -1,8 +1,10 @@
 extends Area2D
 signal hit(score: int)
 signal miss
+signal tracks_finished
 @export var note_scene : PackedScene
-
+enum FINISHED {NONE, ONE, BOTH}
+var finished = FINISHED.NONE
 var example_dict = {}
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,3 +33,17 @@ func _on_track_2_hit(score):
 func _on_killbox_area_entered(area):
 	area.free()
 	miss.emit()
+
+
+func _on_note_spawner1_finished():
+	finished += 1
+	emit_finished()
+
+
+func _on_note_spawner2_finished():
+	finished += 1
+	emit_finished()
+
+func emit_finished():
+	if finished == FINISHED.BOTH:
+		emit_signal("tracks_finished")
