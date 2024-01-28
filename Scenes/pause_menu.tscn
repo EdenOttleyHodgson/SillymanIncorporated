@@ -1,0 +1,116 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnpr8qqwx0nd3"]
+
+[ext_resource type="Script" path="res://Master Slider.gd" id="1_eh6hh"]
+[ext_resource type="Script" path="res://Scenes/pause_menu.gd" id="1_l5j5g"]
+[ext_resource type="Texture2D" uid="uid://dl4g8c7h3av5x" path="res://Assets/art/Screen background (minus line).png" id="3_rgcrj"]
+
+[node name="Pause Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = -1391.0
+offset_bottom = -758.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l5j5g")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 533.0
+offset_bottom = 322.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 26.0
+offset_right = 278.0
+offset_bottom = 49.0
+text = "Paused"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+offset_left = 53.0
+offset_top = 26.0
+offset_right = 495.0
+offset_bottom = 199.0
+theme_override_constants/separation = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Master" type="Label" parent="Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Master Volume"
+
+[node name="Music" type="Label" parent="Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Music"
+
+[node name="SFX" type="Label" parent="Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "SFX"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 17
+alignment = 1
+
+[node name="Master Slider" type="HSlider" parent="Panel/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.5
+script = ExtResource("1_eh6hh")
+bus_name = "Master"
+
+[node name="Music Slider" type="HSlider" parent="Panel/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.5
+script = ExtResource("1_eh6hh")
+bus_name = "Music"
+
+[node name="SFX Slider" type="HSlider" parent="Panel/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 0.5
+script = ExtResource("1_eh6hh")
+bus_name = "SFX"
+
+[node name="Continue Buttlon" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 190.0
+offset_right = 398.0
+offset_bottom = 235.0
+text = "Continue
+"
+
+[node name="Quit Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 248.0
+offset_right = 398.0
+offset_bottom = 293.0
+text = "Quit to Menu
+"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(262.5, 161)
+scale = Vector2(0.326393, 0.286988)
+texture = ExtResource("3_rgcrj")
+
+[connection signal="pressed" from="Panel/Continue Buttlon" to="." method="_on_continue_buttlon_pressed"]
+[connection signal="pressed" from="Panel/Quit Button" to="." method="_on_quit_button_pressed"]

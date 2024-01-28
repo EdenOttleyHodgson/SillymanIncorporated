@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var test = $test
+@onready var test = $Test
 
 func _ready():
 	test.play()
