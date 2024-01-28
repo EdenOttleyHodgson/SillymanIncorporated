@@ -12,6 +12,7 @@ func _ready():
 	$audience.play()
 	$king.play("bored")
 	healthBarSize = $health.size.x
+	$hit_effect.modulate.a = 0
 	pass # Replace with function body.
 
 
@@ -28,6 +29,7 @@ func _process(delta):
 	elif health < 66 && mood != 1:
 		$king.play("bored")
 		mood = 1
+	$hit_effect.modulate.a -= 0.03
 		
 
 	
@@ -37,14 +39,17 @@ func _on_tracks_hit(score):
 	combo += 1
 	if score == 300:
 		health += 20
+		$hit_effect.get_node("effect").texture = preload("res://Assets/art/Hilarious.png")
 	elif  score == 100:
 		health += 10
+		$hit_effect.get_node("effect").texture = preload("res://Assets/art/Funny.png")
 	else:
 		health += 5
+		$hit_effect.get_node("effect").texture = preload("res://Assets/art/Tragic.png")
 		
 	if health > maxHealth:
 		health = maxHealth
-	
+	$hit_effect.modulate.a = 1
 	$score.text = "Score: " + str(totalScore)
 	$combo.text = str(combo) + "x"
 

@@ -2,7 +2,6 @@ extends Node
 
 @export var note_scene : PackedScene
 
-var example_dict = {}
 var count = 0
 var spawnType
 var track

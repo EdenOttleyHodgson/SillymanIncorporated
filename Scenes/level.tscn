@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://do0rjr1s8w5gc"]
+[gd_scene load_steps=9 format=3 uid="uid://do0rjr1s8w5gc"]
 
 [ext_resource type="Script" path="res://Scenes/level.gd" id="1_1xfwg"]
 [ext_resource type="PackedScene" uid="uid://ctbvqdci6k2p" path="res://Scenes/combo.tscn" id="2_vg43f"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b2wkd2uqo8n3m" path="res://Scenes/Track/track_man.tscn" id="5_kfsiq"]
 [ext_resource type="PackedScene" uid="uid://c0jgidvs6soob" path="res://Scenes/audience.tscn" id="6_d28aj"]
 [ext_resource type="PackedScene" uid="uid://cniky8lnn5i4i" path="res://Scenes/king.tscn" id="7_nn76q"]
+[ext_resource type="PackedScene" uid="uid://c7172oltm4rd5" path="res://Scenes/hit_effect.tscn" id="8_rqpus"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1xfwg")
@@ -27,8 +28,8 @@ theme_override_font_sizes/normal_font_size = 33
 metadata/_edit_use_anchors_ = true
 
 [node name="health" parent="." instance=ExtResource("4_ixtee")]
-offset_left = 10.0
-offset_right = 637.0
+offset_left = 1.355
+offset_right = 616.355
 offset_bottom = 31.0
 metadata/_edit_use_anchors_ = true
 
@@ -39,12 +40,16 @@ scale = Vector2(1.68, 1.68)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="audience" parent="." instance=ExtResource("6_d28aj")]
-position = Vector2(960.465, 978.187)
-scale = Vector2(0.248902, 0.248902)
+position = Vector2(964.341, 978.589)
+scale = Vector2(0.249911, 0.249911)
 
 [node name="king" parent="." instance=ExtResource("7_nn76q")]
 position = Vector2(1275, 232)
 scale = Vector2(0.255717, 0.255717)
+
+[node name="hit_effect" parent="." instance=ExtResource("8_rqpus")]
+position = Vector2(630, 406)
+rotation = -0.523599
 
 [connection signal="hit" from="tracks" to="." method="_on_tracks_hit"]
 [connection signal="miss" from="tracks" to="." method="_on_tracks_miss"]
