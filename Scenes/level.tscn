@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://do0rjr1s8w5gc"]
+[gd_scene load_steps=12 format=3 uid="uid://do0rjr1s8w5gc"]
 
 [ext_resource type="Script" path="res://Scenes/level.gd" id="1_1xfwg"]
 [ext_resource type="PackedScene" uid="uid://ctbvqdci6k2p" path="res://Scenes/combo.tscn" id="2_vg43f"]
@@ -8,6 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://c0jgidvs6soob" path="res://Scenes/audience.tscn" id="6_d28aj"]
 [ext_resource type="PackedScene" uid="uid://cniky8lnn5i4i" path="res://Scenes/king.tscn" id="7_nn76q"]
 [ext_resource type="PackedScene" uid="uid://c7172oltm4rd5" path="res://Scenes/hit_effect.tscn" id="8_rqpus"]
+[ext_resource type="PackedScene" uid="uid://c4qkfxyuqrb2p" path="res://Scenes/pause.tscn" id="9_l5yji"]
+[ext_resource type="PackedScene" uid="uid://bssxg67djv13" path="res://Scenes/tomato_cum.tscn" id="10_dr0py"]
+[ext_resource type="PackedScene" uid="uid://dsh7gbt25fbmx" path="res://Scenes/bepy.tscn" id="11_3t6te"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_1xfwg")
@@ -51,5 +54,20 @@ scale = Vector2(0.255717, 0.255717)
 position = Vector2(630, 406)
 rotation = -0.523599
 
+[node name="pause" parent="." instance=ExtResource("9_l5yji")]
+visible = false
+position = Vector2(948, 392)
+scale = Vector2(7.825, 7.825)
+
+[node name="tomato_cum" parent="." instance=ExtResource("10_dr0py")]
+position = Vector2(1462.95, 662)
+scale = Vector2(1.77055, 1.14672)
+
+[node name="bepy" parent="." instance=ExtResource("11_3t6te")]
+z_index = -1
+position = Vector2(309, 446.459)
+scale = Vector2(0.254756, 0.255521)
+
 [connection signal="hit" from="tracks" to="." method="_on_tracks_hit"]
+[connection signal="hitTomato" from="tracks" to="." method="_on_tracks_hit_tomato"]
 [connection signal="miss" from="tracks" to="." method="_on_tracks_miss"]

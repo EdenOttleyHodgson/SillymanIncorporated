@@ -26,11 +26,17 @@ position = Vector2(-315, 58)
 position = Vector2(355, -58)
 
 [node name="killbox" parent="." instance=ExtResource("5_e2a3a")]
-position = Vector2(-373, -5)
+position = Vector2(-378, -61)
 
 [node name="NoteSpawner2" parent="." instance=ExtResource("4_ws00g")]
 position = Vector2(359, 62)
 
+[node name="killbox2" parent="." instance=ExtResource("5_e2a3a")]
+position = Vector2(-378, 54)
+
 [connection signal="hit" from="track1" to="." method="_on_track_1_hit"]
+[connection signal="hitTomato" from="track1" to="." method="_on_track_1_hit_tomato"]
 [connection signal="hit" from="track2" to="." method="_on_track_2_hit"]
+[connection signal="hitTomato" from="track2" to="." method="_on_track_2_hit_tomato"]
 [connection signal="area_entered" from="killbox" to="." method="_on_killbox_area_entered"]
+[connection signal="area_entered" from="killbox2" to="." method="_on_killbox_2_area_entered"]

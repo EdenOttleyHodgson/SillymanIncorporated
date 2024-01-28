@@ -1,7 +1,9 @@
 extends Area2D
 signal hit(score: int)
+signal hitTomato
 var notesInside
 var hitWidth
+var pause = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,9 +11,9 @@ func _ready():
 	hitWidth = $hitbox.shape.extents.x # would also need to add radius of note
 
 func _input(event):
-	if event.is_action_pressed("hit_note1") && get_name() == "track1":
+	if event.is_action_pressed("hit_note1") && get_name() == "track1" && !pause:
 		handle_note()
-	if event.is_action_pressed("hit_note2") && get_name() == "track2":
+	if event.is_action_pressed("hit_note2") && get_name() == "track2" && !pause:
 		handle_note()
 			
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,14 +35,24 @@ func handle_note():
 		# TODO maybe change range based on speed? - probably convert to time using t=d/s
 		var perfect = totalDistance/6
 		var okay = totalDistance/3
-		if distance > -(perfect) && distance < (perfect): # These numbers will need tweaking
-			print("perfect")
-			emit_signal("hit", 300)
-		elif distance > -(okay) && distance < okay:
-			print("okay")
-			emit_signal("hit", 100)
+		if currentNote.is_tomato():
+			hitTomato.emit()
 		else:
-			print("bad")
-			emit_signal("hit", 50)
-		# Pop note from list and delete it
+			if distance > -(perfect) && distance < (perfect): # These numbers will need tweaking
+				print("perfect")
+				emit_signal("hit", 300)
+			elif distance > -(okay) && distance < okay:
+				print("okay")
+				emit_signal("hit", 100)
+			else:
+				print("bad")
+				emit_signal("hit", 50)
+			# Pop note from list and delete it
 		notesInside.pop_front().free()
+
+
+func stop():
+	pause = true
+
+func play():
+	pause = false

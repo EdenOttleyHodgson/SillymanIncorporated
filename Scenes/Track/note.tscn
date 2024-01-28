@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ceklhr8j3g1ti"]
 
 [ext_resource type="Script" path="res://Scenes/Track/note.gd" id="1_7l3c6"]
-[ext_resource type="Texture2D" uid="uid://cqqrfovqmdn2v" path="res://Assets/art/Tracks/HappyGuy.png" id="1_p2hgm"]
+[ext_resource type="Texture2D" uid="uid://iy3n0fu58mp8" path="res://Assets/art/Tracks/anvilb.png" id="2_dmy71"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5tk1d"]
 radius = 71.1448
@@ -11,9 +11,9 @@ position = Vector2(-1, -1)
 script = ExtResource("1_7l3c6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.499987, 1.12676)
-scale = Vector2(0.0441667, 0.0435446)
-texture = ExtResource("1_p2hgm")
+position = Vector2(-1, 1)
+scale = Vector2(0.0606576, 0.0598032)
+texture = ExtResource("2_dmy71")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = 1

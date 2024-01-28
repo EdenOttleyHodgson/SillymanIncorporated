@@ -1,8 +1,12 @@
 extends Area2D
 signal hit(score: int)
 signal miss
+signal hitTomato
+signal tracks_finished
+enum FINISHED {NONE, ONE, BOTH}
+var finished = FINISHED.NONE
 @export var note_scene : PackedScene
-
+var pause = false
 var example_dict = {}
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,5 +33,47 @@ func _on_track_2_hit(score):
 	emit_signal("hit", score)
 
 func _on_killbox_area_entered(area):
+	if !area.is_tomato():
+		miss.emit()
 	area.free()
-	miss.emit()
+	$NoteSpawner.removeNote()
+func _on_killbox_2_area_entered(area):
+	if !area.is_tomato():
+		miss.emit()
+	area.free()
+	$NoteSpawner2.removeNote()
+	
+func stop():
+	pause = true
+	$track1.stop()
+	$track2.stop()
+	$NoteSpawner.pauseSpawner()
+	$NoteSpawner2.pauseSpawner()
+func play():
+	pause = false
+	$track1.play()
+	$track2.play()
+	$NoteSpawner.unpauaseSpawner()
+	$NoteSpawner2.unpauaseSpawner()
+
+
+
+
+
+func _on_track_1_hit_tomato():
+	hitTomato.emit()
+func _on_track_2_hit_tomato():
+	hitTomato.emit()
+
+func _on_note_spawner1_finished():
+	finished += 1
+	emit_finished()
+
+
+func _on_note_spawner2_finished():
+	finished += 1
+	emit_finished()
+
+func emit_finished():
+	if finished == FINISHED.BOTH:
+		emit_signal("tracks_finished")
