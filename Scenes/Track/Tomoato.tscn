@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dueq3jkwjs6yy"]
+
+[ext_resource type="Script" path="res://Scenes/Track/Tomoato.gd" id="1_u8sjr"]
+[ext_resource type="Texture2D" uid="uid://b8idx0d8mdwt2" path="res://Assets/art/Tracks/Geometry Dash.png" id="2_s3ht2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7p8n7"]
+radius = 71.1448
+
+[sub_resource type="GDScript" id="GDScript_jn1hf"]
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Tomoato" type="Area2D"]
+script = ExtResource("1_u8sjr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.044, 0.044)
+texture = ExtResource("2_s3ht2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(-0.249071, 0.641737)
+scale = Vector2(0.35, 0.35)
+shape = SubResource("CircleShape2D_7p8n7")
+script = SubResource("GDScript_jn1hf")

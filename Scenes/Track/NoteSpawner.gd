@@ -1,13 +1,32 @@
 extends Node
 
 @export var note_scene : PackedScene
+@export var tomato_scene : PackedScene
 
 var example_dict = {}
 var count = 0
+<<<<<<< Updated upstream
 
 func	 _ready():
 	import_resources_data()
 	$NoteTimer.start(0.1)
+=======
+var spawnType
+var track
+var tomatoCount = 5
+var rng = RandomNumberGenerator.new()
+
+func start(notes):
+	track = notes
+	$NoteTimer.start(float(0))
+	var randomInt = rng.randf_range(1,20)
+	var rangy = (0.5 * ((2*randomInt)-1)) + 5.0
+	$TomatoChanceTimer.start(rangy)
+
+func _ready():
+	pass
+	
+>>>>>>> Stashed changes
 
 func _on_note_timer_timeout():
 	if count < len(example_dict[3]):
@@ -20,6 +39,7 @@ func _on_note_timer_timeout():
 	else:
 		$NoteTimer.stop()
 
+<<<<<<< Updated upstream
 func import_resources_data():
 	var file = FileAccess.open("res://Assets/Tracks/example.txt", FileAccess.READ)
  
@@ -29,3 +49,16 @@ func import_resources_data():
  
 	file.close()
 	print(example_dict)
+=======
+
+
+func _on_tomato_chance_timer_timeout():
+	if tomatoCount > 0:
+		add_child(tomato_scene.instantiate())
+		tomatoCount -= 1
+		$TomatoChanceTimer.start(1.0)
+	else:
+		var randomInt = rng.randf_range(1,20)
+		var rangy = (0.5 * ((2*randomInt)-1)) + 5.0
+		$TomatoChanceTimer.start(rangy)
+>>>>>>> Stashed changes

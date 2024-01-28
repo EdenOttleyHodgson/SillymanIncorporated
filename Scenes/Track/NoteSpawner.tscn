@@ -1,15 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://cq3aaj2xskxdu"]
+[gd_scene load_steps=4 format=3 uid="uid://cq3aaj2xskxdu"]
 
 [ext_resource type="Script" path="res://Scenes/Track/NoteSpawner.gd" id="1_dmvyv"]
 [ext_resource type="PackedScene" uid="uid://ceklhr8j3g1ti" path="res://Scenes/Track/note.tscn" id="2_m7mlb"]
+[ext_resource type="PackedScene" uid="uid://dueq3jkwjs6yy" path="res://Scenes/Track/Tomoato.tscn" id="3_2pban"]
 
 [node name="NoteSpawner" type="Area2D"]
 script = ExtResource("1_dmvyv")
 note_scene = ExtResource("2_m7mlb")
+tomato_scene = ExtResource("3_2pban")
 
 [node name="StartTimer" type="Timer" parent="."]
 
 [node name="NoteTimer" type="Timer" parent="."]
 wait_time = 4096.0
 
+<<<<<<< Updated upstream
+=======
+[node name="TomatoChanceTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+>>>>>>> Stashed changes
 [connection signal="timeout" from="NoteTimer" to="." method="_on_note_timer_timeout"]
+[connection signal="timeout" from="TomatoChanceTimer" to="." method="_on_tomato_chance_timer_timeout"]
