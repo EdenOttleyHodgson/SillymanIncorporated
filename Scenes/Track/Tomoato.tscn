@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dueq3jkwjs6yy"]
 
 [ext_resource type="Script" path="res://Scenes/Track/Tomoato.gd" id="1_u8sjr"]
-[ext_resource type="Texture2D" uid="uid://b8idx0d8mdwt2" path="res://Assets/art/Tracks/Geometry Dash.png" id="2_s3ht2"]
+[ext_resource type="Texture2D" uid="uid://b8idx0d8mdwt2" path="res://Assets/art/Geometry Dash.png" id="2_s3ht2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7p8n7"]
 radius = 71.1448

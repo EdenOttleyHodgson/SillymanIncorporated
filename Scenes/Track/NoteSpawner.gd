@@ -5,12 +5,6 @@ extends Node
 
 var example_dict = {}
 var count = 0
-<<<<<<< Updated upstream
-
-func	 _ready():
-	import_resources_data()
-	$NoteTimer.start(0.1)
-=======
 var spawnType
 var track
 var tomatoCount = 5
@@ -25,31 +19,38 @@ func start(notes):
 
 func _ready():
 	pass
-	
->>>>>>> Stashed changes
 
 func _on_note_timer_timeout():
-	if count < len(example_dict[3]):
-		var note = note_scene.instantiate()
-		var note_time = example_dict[3]
-		print(note_time)
-		count += 1
-		add_child(note)
-		$NoteTimer.set_wait_time(float(note_time[count]))
+	if count < len(track):
+		if track[count] == "n":
+			spawnType = "n"
+			count += 1
+		else:
+			var note_time = float(track[count])
+			count += 1
+			if spawnType == "n":
+				add_child(note_scene.instantiate())
+			$NoteTimer.set_wait_time(note_time)
 	else:
 		$NoteTimer.stop()
 
-<<<<<<< Updated upstream
-func import_resources_data():
-	var file = FileAccess.open("res://Assets/Tracks/example.txt", FileAccess.READ)
- 
-	while !file.eof_reached():
-		var data_set = Array(file.get_csv_line())
-		example_dict[example_dict.size()] = data_set
- 
-	file.close()
-	print(example_dict)
-=======
+func pauseSpawner():
+	$NoteTimer.set_paused(true)
+func unpauaseSpanwer():
+	$NoteTimer.set_paused(false)
+	$NoteTimer.stop()
+
+#<<<<<<< Updated upstream
+#func import_resources_data():
+	#var file = FileAccess.open("res://Assets/Tracks/example.txt", FileAccess.READ)
+ #
+	#while !file.eof_reached():
+		#var data_set = Array(file.get_csv_line())
+		#example_dict[example_dict.size()] = data_set
+ #
+	#file.close()
+	#print(example_dict)
+#=======
 
 
 func _on_tomato_chance_timer_timeout():
@@ -61,4 +62,4 @@ func _on_tomato_chance_timer_timeout():
 		var randomInt = rng.randf_range(1,20)
 		var rangy = (0.5 * ((2*randomInt)-1)) + 5.0
 		$TomatoChanceTimer.start(rangy)
->>>>>>> Stashed changes
+
